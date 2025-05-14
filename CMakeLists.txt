@@ -73,7 +73,7 @@ make_fat(heimdal-asn1)
 target_link_libraries(heimdal-asn1 system)
 
 target_link_options(heimdal-asn1 PRIVATE
-	-Wl,-exported_symbols_list,${CMAKE_CURRENT_SOURCE_DIR}/gen/build-export-data/heimdal-asn1.exp
+	-Wl,-exported_symbols_list,\"${CMAKE_CURRENT_SOURCE_DIR}\"/gen/build-export-data/heimdal-asn1.exp
 )
 
 add_darling_static_library(heim_heimcred FAT SOURCES
@@ -439,7 +439,7 @@ add_framework(Heimdal
 make_fat(Heimdal)
 
 target_link_options(Heimdal PRIVATE
-	-Wl,-exported_symbols_list,${CMAKE_CURRENT_SOURCE_DIR}/gen/build-export-data/heimdal.exp
+	-Wl,-exported_symbols_list,\"${CMAKE_CURRENT_SOURCE_DIR}\"/gen/build-export-data/heimdal.exp
 )
 
 install(TARGETS heimdal-asn1 DESTINATION libexec/darling/usr/lib)
@@ -487,7 +487,7 @@ add_framework(CommonAuth
 )
 
 target_link_options(CommonAuth PRIVATE
-	-Wl,-exported_symbols_list,${CMAKE_CURRENT_SOURCE_DIR}/gen/build-export-data/commonauth.exp
+	-Wl,-exported_symbols_list,\"${CMAKE_CURRENT_SOURCE_DIR}\"/gen/build-export-data/commonauth.exp
 )
 
 target_include_directories(CommonAuth PRIVATE

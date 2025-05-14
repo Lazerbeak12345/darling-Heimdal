@@ -301,5 +301,5 @@ add_framework(GSS
 )
 
 target_link_options(GSS PRIVATE
-	-Wl,-exported_symbols_list,${CMAKE_CURRENT_SOURCE_DIR}/../../gen/build-export-data/gss.exp
+	-Wl,-exported_symbols_list,\"${CMAKE_CURRENT_SOURCE_DIR}\"/../../gen/build-export-data/gss.exp
 )
